@@ -1,0 +1,117 @@
+@import url('https://fonts.googleapis.com/css2?family=Krona+One&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');/*importando font do google fonts*/
+
+:root{                              /* :root usando para declarar as variaveis globais*/
+    --cor-primaria: #000000;      /* Maneira de como declara uma variavel em CSS*/
+    --cor-secundaria: #F6F6F6;      /*paleta de cores do adobe ou do colerhunt*/
+    --cor-terciaria: #22D4FD;
+    --cor-hover:  #272727;
+
+    --fonte-principal: 'Krona One', sans-serif;
+    --fonte-secundaria: 'Montserrat', sans-serif;
+}
+
+*{                                /*O asterisco serve para selecionar todas as tags do documento (RESET CSS)*/ 
+    margin: 0;
+    padding: 0;
+}
+body {
+    /* height: 100vh;                 altura é 100% da tela (viewport horizon) para que nao precisa usar o scroll do mouse */
+    box-sizing: border-box;        /*encolher o conteudo para caber dentro da body e nao "vazar"*/
+    background-color: var(--cor-primaria);     /* cor do fundo */
+    color: var(--cor-secundaria)               /* cor do texto */
+}
+
+.cabecalho{
+    padding: 2% 0 0 15%;                   /*Consultando a documentação do padding para ver quais os parametros*/
+}
+
+.cabecalho__menu{
+    display: flex;
+    gap: 80px;                          /* Espaçamento entre "home" e "sobre mim"*/
+}
+
+.cabecalho__menu__link{
+    font-family: var(--fonte-secundaria);
+    font-size: 24px;
+    font-weight: 600;
+    color: var(--cor-terciaria);
+    text-decoration: none;
+}
+
+
+.apresentacao {                     /* Usou a classe na main pois ela que é o "PAI" */
+    display: flex;                  /* Coloca todos os objetos na mesma "direção de linha" */
+    align-items: center;            /* Usado para centralizar os itens*/
+    justify-content: space-between; /* Usando para justificar (espaçamento) */
+    padding: 5% 15%;                    /* Criando margem via chutometro até ficar do jeito que quer (vertical horizontal) */
+}
+
+.apresentacao__conteudo{
+    width: 615px;                   /* Observando o desenho no Figma é possivel obter essas dimensões*/
+    display: flex;
+    flex-direction: column;         /* Ambos necessários para ajustar o tamanho das margens no conteudo*/
+    gap: 40px;
+}
+
+.apresentacao__conteudo__titulo{
+    font-size: 36px;
+    font-family: var(--fonte-principal);
+}
+
+/*strong {} */                    /* Poderia ser usado se só quisesse que grifasse em uma unica cor */
+.titulo-destaque {                /* Dar cor a parte destacada do texto utilizando a classe para distinguir */
+    color: var(--cor-terciaria)
+}
+
+.apresentacao__conteudo__texto {
+    font-size: 24px;
+    font-family: var(--fonte-secundaria);
+}
+
+.apresentacao__links{
+    display: flex;
+    flex-direction: column;                 /* Deixando os botões na vertical*/
+    align-items: center;                    /* Centralizando os botões*/
+    justify-content: space-between;         /* olhando qual espaçamento fica melhor no guia de Flexbox*/
+    gap: 32px;                              /* Espaçamento dos botões (verificado com alt no figma)*/
+}
+
+.apresentacao__links__subtitulo{
+    font-family: var(--fonte-principal);    /* Ajustando a fonte */
+    font-weight: 400;
+    font-size: 24px;
+}
+
+.apresentacao__links__link{
+    display: flex;                          /*Flexbox para poder alinhar o icone e o texto*/
+    justify-content: center;
+    gap: 16px;
+    border: 2px solid var(--cor-terciaria);            /* Criando a borda estilizada do botão*/
+    width: 378px;                           /* largura do botao visto no figma*/
+    text-align: center;                     /* centralizando os botões tendo eles como referencia*/
+    border-radius: 8px;                    /* arredondar as bordas do botão (valor verificado no figma)*/
+    font-size: 24px;                        /* No padding primeiro é o eixo vertical depois o eixo horizontal*/
+    padding: 21.5px 0;                      /* Com auxilio do inspecionar voce verifica qual das distancias precisa ser editada, sem seguida usa o alt no figma para verificar esses comprimentos*/
+    text-decoration: none;                  /* Retirar as decorações do texto (no caso o sublinhado de hiperlink)*/   
+    color: var(--cor-secundaria);
+    font-family: var(--fonte-secundaria);
+    font-weight: 600;                       /* Deixando em negrito com base no weight dito no figma*/
+}
+
+.apresentacao__links__link:hover {          /* Efeito de mududar o fundo quando passar o mouse por cima do botao*/
+    background-color: var(--cor-hover);
+    padding: 3%;
+    cursor: pointer;
+}
+
+.rodape{
+
+    padding: 24px;                          /* Distancias ao redor do texto (no caso seria 24 p cima e p baixo)*/
+    background-color: var(--cor-terciaria);
+    text-align: center;
+    font-family: var(--fonte-secundaria);
+    color: var(--cor-primaria);
+    font-size: 24px;
+    font-weight: 400;
+}
+
